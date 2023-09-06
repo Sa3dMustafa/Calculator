@@ -205,6 +205,7 @@ body {
 .Dark .prosess {
     background-color: #005db2 !important;
     border: none !important;
+    color: white !important;
 }
 .Dark .equal{
     background-color: #109dff !important;
