@@ -55,12 +55,7 @@ deleteNums.onclick = function deleteLastCharacter() {
 };
 
 // dark mode
-const mainBody = document.querySelector(".content");
-const themeToggle = document.getElementById("themeToggle");
-const inputDark = document.querySelector(".dark-input");
-const resultDark = document.querySelector(".dark-result");
-const numsDark = document.querySelectorAll(".dark-num");
-const darkBrosses = document.querySelectorAll(".dark-prosess");
+
 // to set the theme preference in localStorage
 function setTheme(theme) {
   localStorage.setItem("theme", theme);
@@ -74,22 +69,10 @@ function getTheme() {
 // Function to apply the theme
 function applyTheme() {
   const theme = getTheme();
-  if (theme === "dark") {
-    mainBody.classList.add("dark");
-    inputDark.classList.add("dark-input");
-    resultDark.classList.add("dark-result");
-    document.body.style.backgroundColor = "black";
-    darkBrosses.forEach((prosess) => prosess.classList.add("dark-prosess"));
-    numsDark.forEach((num) => num.classList.add("dark-num"));
-    themeToggle.checked = true;
+  if (theme === "Dark") {
+    document.body.classList.add("Dark");
   } else {
-    mainBody.classList.remove("dark");
-    inputDark.classList.remove("dark-input");
-    resultDark.classList.remove("dark-result");
-    darkBrosses.forEach((prosess) => prosess.classList.remove("dark-prosess"));
-    numsDark.forEach((num) => num.classList.remove("dark-num"));
-    document.body.style.backgroundColor = "white";
-    themeToggle.checked = false;
+    document.body.classList.remove("Dark");
   }
 }
 
@@ -100,7 +83,7 @@ applyTheme();
 themeToggle.addEventListener("change", function () {
   if (themeToggle.checked) {
     // Dark theme
-    setTheme("dark");
+    setTheme("Dark");
     applyTheme();
   } else {
     // Light theme
