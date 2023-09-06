@@ -1,0 +1,259 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.main {
+    width: 400px;
+    height: 650px;
+    max-height: 100vh;
+    background-color: white;
+    border-radius: 24px;
+    position: relative;
+}
+
+.main::after {
+    content: "";
+    position: absolute;
+    top: -122px;
+    right: -69px;
+    display: block;
+    margin: 120px auto;
+    width: 500px;
+    height: 500px;
+    background-color: #109dff;
+    box-shadow: -1px 20px 20px 8px #109dffbd;
+    border-radius: 50%;
+}
+
+
+.main .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    background: #f7f8fbcb;
+    position: relative;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.main .content .head {
+    width: 100%;
+    height: 27%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input {
+    border-radius: 20px 20px 0 0;
+}
+
+.input,
+.result {
+    width: 100%;
+    height: 50%;
+    padding: 10px 20px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f7f8fb03;
+    border: none;
+    outline: none;
+}
+
+.head .result {
+    font-size: 40px !important;
+}
+
+.content .buttons {
+    width: 100%;
+    height: 73%;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 66px);
+    grid-template-rows: repeat(5, 64px);
+    gap: 25px;
+}
+
+.content .buttons button {
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #109dff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: white;
+    transition: 0.7s;
+}
+
+.content .buttons button:hover {
+    background-color: #efefefad;
+    transition: 0.7s;
+    transform: scale(0.9);
+}
+
+/* special classes for some buttons */
+.zero {
+    grid-area: 5/1/5/3;
+}
+
+.equal {
+    grid-area: 4/4/6/4;
+    box-shadow: 2px -2px 15px 1px #19acff;
+    background-color: #19acff !important;
+    color: white !important;
+    border: none !important;
+}
+
+.equal:hover {
+    transform: scale(0.9);
+}
+
+.clear {
+    font-size: 35px !important;
+    color: #858585 !important;
+}
+
+.delete {
+    font-size: 20px;
+    color: #858585 !important;
+}
+
+.prosess {
+    background-color: #ade2ff !important;
+    border: none !important;
+}
+
+.prosess:hover {
+    background-color: #19acff !important;
+    color: white !important;
+}
+/* end special classes */
+
+/* media queries for sections */
+@media only screen and (min-width: 320px) and (max-width: 550px) {
+    .main {
+        height: 600px;
+        width: 300px;
+    }
+
+    .main::after {
+        right: 50px;
+    }
+
+    .main .content .head {
+        height: 30%;
+    }
+
+    .main .content .buttons {
+        height: 70%;
+        padding: 10px;
+        grid-template-columns: repeat(4, 58px);
+        grid-template-rows: repeat(5, 68px);
+        gap: 15px;
+    }
+
+    .clear {
+        font-size: 25px !important;
+    }
+
+    .delete {
+        font-size: 20px !important;
+    }
+}
+
+/* classes to add  dark mode */
+.dark {
+    background-color: #17181aeb !important;
+}
+
+.dark-num {
+    background-color: #303136 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.dark-num:hover {
+    background-color: #30313681 !important;
+}
+
+.dark-input,
+.dark-result {
+    color: white !important;
+    background-color: #17181a00 !important;
+}
+
+.dark-prosess {
+    background-color: #005db2 !important;
+    border: none !important;
+}
+/* end dark mode */
+
+/*  themeToggle to change between dark and light  */
+.themes {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.theme-checkbox {
+    --toggle-size: 16px;
+    appearance: none;
+    width: 60px !important;
+    height: 23px;
+    background: linear-gradient(to right, #efefef 50%, black 50%) no-repeat;
+    background-size: 205%;
+    background-position: 0;
+    transition: 0.4s;
+    border-radius: 99em;
+    position: absolute;
+    cursor: pointer;
+    font-size: var(--toggle-size);
+    top: 17px;
+    right: 17px;
+    transition: 0.7s;
+}
+
+.theme-checkbox::before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: linear-gradient(to right, #dddddd 50%, #2a2a2a 50%) no-repeat;
+    background-size: 205%;
+    background-position: 100%;
+    border-radius: 50%;
+    transition: 0.7s;
+}
+
+.theme-checkbox:checked::before {
+    left: calc(100% - 20px);
+    background-position: 0;
+    transition: 0.7s;
+}
+
+.theme-checkbox:checked {
+    background-position: 100%;
+    transition: 0.7s;
+}
