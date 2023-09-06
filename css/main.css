@@ -206,6 +206,9 @@ body {
     background-color: #005db2 !important;
     border: none !important;
 }
+.Dark .equal{
+    background-color: #109dff !important;
+} 
 /* end dark mode */
 
 /*  themeToggle to change between dark and light  */
