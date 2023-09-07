@@ -80,6 +80,7 @@ function applyTheme() {
 applyTheme();
 
 // Listen for changes to the theme checkbox
+const themeToggle = document.querySelector('.theme-checkbox')
 themeToggle.addEventListener("change", function () {
   if (themeToggle.checked) {
     // Dark theme
