@@ -92,3 +92,13 @@ themeToggle.addEventListener("change", function () {
     applyTheme();
   }
 });
+
+window.onload = () => {
+  const savedTheme = getTheme();
+    // Check the toggle if the saved theme is 'Dark'
+    if (savedTheme === "Dark") {
+        themeToggle.checked = true;
+    } else {
+        themeToggle.checked = false;
+    }
+}
