@@ -188,6 +188,9 @@ body {
 }
 
 /* Dark mode styles */
+.Dark {
+    background-color: black;
+}
 .Dark .content {
     background-color: #17181aeb !important;
 }
