@@ -188,7 +188,7 @@ body {
 }
 
 /* Dark mode styles */
-.Dark {
+body.Dark {
     background-color: black;
 }
 .Dark .content {
